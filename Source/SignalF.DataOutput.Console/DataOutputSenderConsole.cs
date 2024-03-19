@@ -1,8 +1,4 @@
-﻿#region
-
-#endregion
-
-using SignalF.Controller.DataOutput;
+﻿using SignalF.Controller.DataOutput;
 using SignalF.Controller.Signals;
 using SignalF.Datamodel.DataOutput;
 using SignalF.Configuration;
@@ -37,12 +33,13 @@ public class DataOutputSenderConsole : DataOutputSender, IDataOutputSenderConsol
 
         foreach (var signal in signals)
         {
-            // Values start with signal index "0". An signal index of "-1" is the timestamp.
+            // Values start with signal index "0". A signal index of "-1" is the timestamp.
             if (signal.SignalIndex == -1)
             {
                 if (_options?.ShowTimestamp == true)
                 {
-                    System.Console.WriteLine($"Timestamp: {signal.Timestamp:O}");
+                    var timestamp = new DateTime(signal.Timestamp.GetValueOrDefault());
+                    System.Console.WriteLine($"Timestamp: {timestamp:yyyy-MM-dd hh:mm:ss.ffffff}");
                 }
             }
             else

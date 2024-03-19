@@ -5,20 +5,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using SignalF.Configuration.DataOutput;
-using Iot.Device.CpuTemperature;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace SignalF.DataOutput.Console
 {
     public static class ConsoleExtensions
     {
-        private const string ConsoleTemplateName = "ConsoleTemplate";
-        private const string ConsoleDefinitionName = "ConsoleDefinition";
-        private const string ConsoleDefaultName = "Console";
+        private const string ConsoleDefaultName = "DataOutputSenderConsole";
 
-        public static IServiceCollection AddConsole(this IServiceCollection services)
+        public static IServiceCollection AddDataOutputSenderConsole(this IServiceCollection services)
         {
-            return services.AddTransient<DataOutputSenderConsole>();
+            return services.AddTransient<IDataOutputSenderConsole, DataOutputSenderConsole>();
         }
 
 
@@ -29,6 +26,5 @@ namespace SignalF.DataOutput.Console
                 .AddDataOutputSenderConfiguration<IDataOutputSenderConfigurationBuilder, DataOutputSenderConsoleOptions,
                     IDataOutputSenderConsole>(builder);
         }
-
     }
 }
