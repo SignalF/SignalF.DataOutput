@@ -38,7 +38,7 @@ public class DataOutputSenderConsole : DataOutputSender, IDataOutputSenderConsol
                 if (_options?.ShowTimestamp == true)
                 {
                     var timestamp = new DateTime(signal.Timestamp.GetValueOrDefault());
-                    System.Console.WriteLine($"Timestamp: {timestamp:yyyy-MM-dd hh:mm:ss.ffffff}");
+                    System.Console.WriteLine($"Cycle timestamp: {timestamp:yyyy-MM-dd hh:mm:ss.ffffff}");
                 }
             }
             else
