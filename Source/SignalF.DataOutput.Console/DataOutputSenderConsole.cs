@@ -24,7 +24,6 @@ public class DataOutputSenderConsole : DataOutputSender, IDataOutputSenderConsol
 
     protected override Task ProcessValuesAsync(Signal[] signals)
     {
-
         if (signals.All(value => value.SignalIndex == -1))
         {
             // No values to send.
@@ -44,7 +43,10 @@ public class DataOutputSenderConsole : DataOutputSender, IDataOutputSenderConsol
             }
             else
             {
-                System.Console.WriteLine($"Index {signal.SignalIndex:00} Value: {signal.Value}");
+                //TODO: Add automatic unit conversion. 
+                // Values are kept in SI units. They should be converted to the 
+                // configured unit.
+                System.Console.WriteLine($"Signal: {GetSignalNameFromIndex(signal.SignalIndex)}, Value: {signal.Value}");
             }
         }
 
