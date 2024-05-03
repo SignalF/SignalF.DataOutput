@@ -9,7 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="SignalF.Extensions.Configuration" Version="0.8.0-dev.51" />
+    <PackageReference Include="SignalF.Extensions.Configuration" Version="0.8.0-dev.54" />
   </ItemGroup>
 
 </Project>
