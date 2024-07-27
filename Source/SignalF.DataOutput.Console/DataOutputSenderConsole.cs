@@ -1,13 +1,14 @@
-﻿using SignalF.Controller.DataOutput;
+﻿using SignalF.Configuration;
+using SignalF.Controller.DataOutput;
 using SignalF.Controller.Signals;
 using SignalF.Datamodel.DataOutput;
-using SignalF.Configuration;
 
 namespace SignalF.DataOutput.Console;
 
 public class DataOutputSenderConsole : DataOutputSender, IDataOutputSenderConsole
 {
     private DataOutputSenderConsoleOptions? _options;
+
     public DataOutputSenderConsole(ISignalHub signalHub) : base(signalHub)
     {
     }
@@ -31,7 +32,6 @@ public class DataOutputSenderConsole : DataOutputSender, IDataOutputSenderConsol
         }
 
         foreach (var signal in signals)
-        {
             // Values start with signal index "0". A signal index of "-1" is the timestamp.
             if (signal.SignalIndex == -1)
             {
@@ -46,9 +46,9 @@ public class DataOutputSenderConsole : DataOutputSender, IDataOutputSenderConsol
                 //TODO: Add automatic unit conversion. 
                 // Values are kept in SI units. They should be converted to the 
                 // configured unit.
-                System.Console.WriteLine($"Signal: {GetSignalNameFromIndex(signal.SignalIndex)}, Value: {signal.Value}");
+                System.Console.WriteLine(
+                    $"Signal: {GetSignalNameFromIndex(signal.SignalIndex)}, Value: {signal.Value}");
             }
-        }
 
         return Task.CompletedTask;
     }
