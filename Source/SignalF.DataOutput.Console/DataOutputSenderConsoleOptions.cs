@@ -1,8 +1,8 @@
-﻿using SignalF.Controller.Configuration;
+﻿using SignalF.Configuration.DataOutput;
 
 namespace SignalF.DataOutput.Console;
 
-public class DataOutputSenderConsoleOptions : SignalFConfigurationOptions
+public class DataOutputSenderConsoleOptions : DataOutputSenderOptions
 {
     public bool ShowTimestamp { get; set; }
 }

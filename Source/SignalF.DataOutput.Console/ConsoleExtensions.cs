@@ -18,7 +18,7 @@ public static class ConsoleExtensions
         , Action<IDataOutputSenderConfigurationBuilder<DataOutputSenderConsoleOptions>> builder)
     {
         return configuration
-            .AddDataOutputSenderConfiguration<IDataOutputSenderConfigurationBuilder, DataOutputSenderConsoleOptions,
-                IDataOutputSenderConsole>(builder);
+            .AddDataOutputSenderConfiguration<IDataOutputSenderConfigurationBuilder<DataOutputSenderConsoleOptions>
+                , DataOutputSenderConsoleOptions, IDataOutputSenderConsole>(builder);
     }
 }
