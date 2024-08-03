@@ -10,7 +10,8 @@ public static class ConsoleExtensions
 
     public static IServiceCollection AddDataOutputSenderConsole(this IServiceCollection services)
     {
-        return services.AddTransient<IDataOutputSenderConsole, DataOutputSenderConsole>();
+        return services.AddTransient<IDataOutputSenderConsole, DataOutputSenderConsole>()
+                       .AddTransient<IDataOutputSenderConfigurationBuilder<DataOutputSenderConsoleOptions>, DataOutputSenderConfigurationBuilder<DataOutputSenderConsoleOptions>>();
     }
 
 
