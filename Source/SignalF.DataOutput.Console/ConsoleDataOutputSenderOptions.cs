@@ -2,7 +2,7 @@
 
 namespace SignalF.DataOutput.Console;
 
-public class DataOutputSenderConsoleOptions : DataOutputSenderOptions
+public class ConsoleDataOutputSenderOptions : DataOutputSenderOptions
 {
     public bool ShowTimestamp { get; set; }
 }

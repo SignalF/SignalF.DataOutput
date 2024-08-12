@@ -7,7 +7,7 @@ namespace SignalF.DataOutput.Console;
 
 public class DataOutputSenderConsole : DataOutputSender, IDataOutputSenderConsole
 {
-    private DataOutputSenderConsoleOptions? _options;
+    private ConsoleDataOutputSenderOptions? _options;
 
     public DataOutputSenderConsole(ISignalHub signalHub) : base(signalHub)
     {
@@ -20,7 +20,7 @@ public class DataOutputSenderConsole : DataOutputSender, IDataOutputSenderConsol
 
     protected override void DoConfigure(IDataOutputSenderConfiguration configuration)
     {
-        _options = configuration.Configuration.Get<DataOutputSenderConsoleOptions>();
+        _options = configuration.Configuration.Get<ConsoleDataOutputSenderOptions>();
     }
 
     protected override Task ProcessValuesAsync(Signal[] signals)

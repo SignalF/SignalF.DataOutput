@@ -11,15 +11,15 @@ public static class ConsoleExtensions
     public static IServiceCollection AddDataOutputSenderConsole(this IServiceCollection services)
     {
         return services.AddTransient<IDataOutputSenderConsole, DataOutputSenderConsole>()
-                       .AddTransient<IDataOutputSenderConfigurationBuilder<DataOutputSenderConsoleOptions>, DataOutputSenderConfigurationBuilder<DataOutputSenderConsoleOptions>>();
+                       .AddTransient<IDataOutputSenderConfigurationBuilder<ConsoleDataOutputSenderOptions>, DataOutputSenderConfigurationBuilder<ConsoleDataOutputSenderOptions>>();
     }
 
 
     public static ISignalFConfiguration AddDataOutputSenderConsole(this ISignalFConfiguration configuration
-        , Action<IDataOutputSenderConfigurationBuilder<DataOutputSenderConsoleOptions>> builder)
+        , Action<IDataOutputSenderConfigurationBuilder<ConsoleDataOutputSenderOptions>> builder)
     {
         return configuration
-            .AddDataOutputSenderConfiguration<IDataOutputSenderConfigurationBuilder<DataOutputSenderConsoleOptions>
-                , DataOutputSenderConsoleOptions, IDataOutputSenderConsole>(builder);
+            .AddDataOutputSenderConfiguration<IDataOutputSenderConfigurationBuilder<ConsoleDataOutputSenderOptions>
+                , ConsoleDataOutputSenderOptions, IDataOutputSenderConsole>(builder);
     }
 }
