@@ -1,15 +1,17 @@
 ﻿using SignalF.Configuration;
+using SignalF.Configuration.Integration;
 using SignalF.Controller.DataOutput;
 using SignalF.Controller.Signals;
 using SignalF.Datamodel.DataOutput;
 
 namespace SignalF.DataOutput.Console;
 
-public class DataOutputSenderConsole : DataOutputSender, IDataOutputSenderConsole
+[DataOutputSender]
+public class Console : DataOutputSender, IConsole
 {
     private ConsoleDataOutputSenderOptions? _options;
 
-    public DataOutputSenderConsole(ISignalHub signalHub) : base(signalHub)
+    public Console(ISignalHub signalHub) : base(signalHub)
     {
     }
 

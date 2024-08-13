@@ -4,6 +4,9 @@
 		<TargetFramework>net8.0</TargetFramework>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
+		<EmitCompilerGeneratedFiles>true</EmitCompilerGeneratedFiles>
+		<!--<CompilerGeneratedFilesOutputPath>./Generated</CompilerGeneratedFilesOutputPath>-->
+
 	</PropertyGroup>
 
 	<PropertyGroup>
@@ -12,7 +15,8 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="SignalF.Extensions.Configuration" Version="0.8.0-dev.107" />
+		<PackageReference Include="SignalF.Configuration.Integration" Version="0.8.0-dev.110" />
+		<PackageReference Include="SignalF.Extensions.Configuration" Version="0.8.0-dev.110" />
 	</ItemGroup>
 
 </Project>

@@ -2,6 +2,6 @@
 
 namespace SignalF.DataOutput.Console;
 
-public interface IDataOutputSenderConsole : IDataOutputSender
+public interface IConsole : IDataOutputSender
 {
 }
