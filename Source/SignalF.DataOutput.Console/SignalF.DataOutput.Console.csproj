@@ -15,8 +15,8 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="SignalF.Configuration.Integration" Version="0.8.0-dev.110" />
-		<PackageReference Include="SignalF.Extensions.Configuration" Version="0.8.0-dev.110" />
+		<PackageReference Include="SignalF.Configuration.Integration" Version="0.8.0-dev.107" />
+		<PackageReference Include="SignalF.Extensions.Configuration" Version="0.8.0-dev.107" />
 	</ItemGroup>
 
 </Project>
