@@ -9,7 +9,7 @@ namespace SignalF.DataOutput.Console;
 [DataOutputSender]
 public class Console : DataOutputSender, IConsole
 {
-    private ConsoleDataOutputSenderOptions? _options;
+    private ConsoleOptions? _options;
 
     public Console(ISignalHub signalHub) : base(signalHub)
     {
