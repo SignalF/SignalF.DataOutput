@@ -22,7 +22,7 @@ public class Console : DataOutputSender, IConsole
 
     protected override void DoConfigure(IDataOutputSenderConfiguration configuration)
     {
-        //_options = configuration.Configuration.Get<ConsoleDataOutputSenderOptions>();
+        _options = configuration.Configuration.Get<ConsoleOptions>();
     }
 
     protected override Task ProcessValuesAsync(Signal[] signals)
