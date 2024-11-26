@@ -1,4 +1,5 @@
-﻿using SignalF.Configuration;
+﻿using System.Collections;
+using SignalF.Configuration;
 using SignalF.Configuration.Integration;
 using SignalF.Controller.DataOutput;
 using SignalF.Controller.Signals;
